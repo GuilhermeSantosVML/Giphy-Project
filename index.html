@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    alo
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" defer src="js/main.js"></script>
+
+    <title>Giphy Project</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header__title">Giphy Project</h1>
+      <nav>
+        <a href="#section-random" class="navbar__link">
+          <i></i>
+        </a>
+        <a href="#section-search" class="navbar__link">
+          <i></i>
+        </a>
+        <a href="#section-trending" class="navbar__link">
+          <i></i>
+        </a>
+      </nav>
+    </header>
+    <main>
+        <section class="section__random">
+            <h2 class="secondary__heading">Random</h2>
+            <div>
+                <div>
+
+                </div>
+                <button type="button" class="btn randomSection__btn">
+                    <i class="fa-solid fa-repeat" aria-hidden="true"></i> next
+                  </button>
+            </div>
+        </section>
+        <section class="section__finder">
+            <h2>Finder</h2>
+            <form action="#" role="search">
+                <label for="gif-search-input">Search for a GIPHY</label>
+                <input
+            aria-label="search for a gif from GIPHY"
+            class=""
+            id="search"
+            name="search"
+            type="text"
+          />
+          <button type="submit">
+            <i></i>
+            Search</button>
+            </form>
+            <div class="section-finder__container" aria-live="polite">
+                <div
+                  class="loading-spinner loading-spinner--finder u-hidden"
+                  role="status"
+                  aria-label="Loading search result"
+                ></div>
+                <div class="img-container img-container--finder"></div>
+              </div>
+              <div
+                class="pagination section-finder__pagination"
+                aria-label="Search results pagination"
+              ></div>
+        </section>
+        <section class="section_trending">
+            <h2>Treding</h2>
+        </section>
+    </main>
+  </body>
 </html>

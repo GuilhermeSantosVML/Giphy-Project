@@ -18,5 +18,8 @@
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^4.1.1",
     "sass": "^1.79.3"
+  },
+  "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.6.0"
   }
 }
