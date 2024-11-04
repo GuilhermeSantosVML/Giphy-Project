@@ -1,0 +1,35 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    stroke: red;
+  }
+  16% {
+    stroke: orange;
+  }
+  33% {
+    stroke: yellow;
+  }
+  50% {
+    stroke: green;
+  }
+  66% {
+    stroke: blue;
+  }
+  83% {
+    stroke: indigo;
+  }
+  95% {
+    stroke: violet;
+  }
+  100% {
+    stroke: rgb(234, 95, 95);
+  }
+}

@@ -1,0 +1,31 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+
+.nav {
+  background-color: none;
+  margin-top: 1rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.2rem;
+
+  @include m.respond(lg-phone) {
+    display: none;
+  }
+  
+
+  &__link {
+    text-decoration: none;
+    color: v.$color-text-primary;
+    transition: color 0.3s ease;
+    font-size: 2.3rem;
+    
+
+    &:hover {
+      @include m.rainbow-icons();
+    }
+  }
+}

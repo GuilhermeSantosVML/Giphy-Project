@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+%header-style {
+  font-weight: 700;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+body {
+  font-family: Work Sans, sans-serif;
+  //   color: v.$color-text-primary;
+}
+
+.header-title {
+  @extend %header-style;
+  //   color: v.$color-accent-primary;
+  text-transform: uppercase;
+  //   font-size: v.$header-font-size-primary;
+}
+.section__heading-secondary {
+  color: v.$color-text-primary;
+  text-transform: capitalize;
+  font-size: 2.5rem;
+}

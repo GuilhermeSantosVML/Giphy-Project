@@ -1,0 +1,76 @@
+@use "../base/animations";
+
+
+@mixin center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@mixin rainbow-title() {
+  background-image: linear-gradient(
+    to left,
+    rgb(255, 0, 0) 0%,
+    rgb(255, 0, 0) 30%,
+    orange 40%,
+    rgb(255, 255, 0) 50%,
+    rgb(2, 184, 38) 60%,
+    rgb(51, 171, 251) 65%,
+    rgb(109, 0, 187) 75%,
+    violet 85%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@mixin rainbow-icons() {
+  background-image: linear-gradient(
+    to left,
+    red,
+    rgb(255, 255, 0),
+    green,
+    blue
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+
+
+
+
+@mixin respond($breakpoint) {
+  // Small phones (0 - 600px) is default, no media query needed
+
+  @if $breakpoint == lg-phone {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (min-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
+
+

@@ -1,0 +1,20 @@
+// Colors
+
+$color-bg-primary: #181818;
+$color-bg-secondary: #030303b1;
+$color-text-primary: rgb(239, 239, 239);
+
+$color-rainbow-gradient: linear-gradient(
+  to left,
+  rgb(255, 0, 0) 0%,
+  orange 20%,
+  rgb(214, 214, 6) 30%,
+  rgb(2, 184, 38) 40%,
+  rgb(0, 153, 255) 55%,
+  indigo 80%,
+  violet 95%
+);
+
+// Layout
+$default-gap: 1rem;
+
