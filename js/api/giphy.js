@@ -1,29 +1,29 @@
-/**
- * Fetches data from a specified API endpoint
- * @param {string} url - The URL to fetch data from
- * @returns {Promise<any>} The parsed JSON response from the API
- * @throws {Error} If the network response is not OK or if there's any other error
- */
-async function fetchFromAPI(url) {
-    try {
-      // Attempt to fetch data from the provided URL
-      const response = await fetch(url);
-      
-      // Check if the response is successful
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      // Parse the response body as JSON
-      const data = await response.json();
-  
-      // Return the parsed data
-      return data;
-  
-    } catch (error) {
-      // Log any errors that occur during the fetch operation
-      console.error('Error fetching data:', error);
-      // Re-throw the error so it can be handled by the calling code
-      throw error;
+/*
+ * Fetches data from the GIPHY API
+ * @param {string} url - The API URL
+ * @returns {Promise<Object>} The API response data
+ * @throws {Error} If the request fails or returns status diff than 200
+ *
+ * @todo Implement Promise.race between fetch call and timeout helper function
+ * @todo Add automatic retry mechanism with timer if initial request fails (to handle poor network conditions)
+ *
+ * */
+export async function fetchFromAPI(url) {
+  try {
+    // Fetch from API
+    const response = await fetch(url);
+
+    // Extract response
+    const data = await response.json();
+
+    //If request not successful, throw error
+    if (data.meta.status !== 200) {
+      throw new Error(JSON.stringify(data.meta));
     }
+    // Return data
+    return data;
+  } catch (e) {
+    console.error(`Error fetching from GIPHY: ${e.message}`);
+    throw e;
   }
+}

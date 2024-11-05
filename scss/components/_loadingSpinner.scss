@@ -2,7 +2,8 @@
 @use "../abstracts/mixins" as m;
 @use "../base/animations";
 
-.section--random__loading-spinner {
+.loading-spinner {
+  z-index: 10;
   margin: 5rem auto;
   text-align: center;
   height: 6rem;
@@ -12,3 +13,5 @@
   animation: rotate 2s infinite linear, rainbow 6s infinite linear;
   @include m.center;
 }
+
+

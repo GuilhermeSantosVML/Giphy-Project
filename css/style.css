@@ -106,9 +106,11 @@ body {
 }
 
 .header__title {
+  text-transform: uppercase;
   grid-row: 1/2;
   grid-column: 1/-1;
   background-image: linear-gradient(to left, rgb(255, 0, 0) 0%, rgb(255, 0, 0) 30%, orange 40%, rgb(255, 255, 0) 50%, rgb(2, 184, 38) 60%, rgb(51, 171, 251) 65%, rgb(109, 0, 187) 75%, violet 85%);
+  background-size: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -125,12 +127,13 @@ body {
 }
 @media only screen and (min-width: 37.5em) {
   .container {
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: repeat(2, auto);
+    display: flex;
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 56.25em) {
   .container {
+    display: grid;
     grid-template-columns: 1fr 2.5fr 1fr;
     grid-template-rows: repeat(3, auto);
   }
@@ -140,23 +143,17 @@ body {
   padding: 2rem;
 }
 
-.section-random__test {
-  border: solid black;
-  height: 20rem;
-  text-align: center;
-}
-
 .nav {
   background-color: none;
-  margin-top: 1rem;
   z-index: 200;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 1.2rem;
+  background-color: rgb(51, 51, 51);
 }
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
   .nav {
     display: none;
   }
@@ -166,6 +163,15 @@ body {
   color: rgb(239, 239, 239);
   transition: color 0.3s ease;
   font-size: 2.3rem;
+}
+.nav__link--active {
+  background-image: linear-gradient(to left, red, rgb(255, 255, 0), green, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .nav__link:hover {
   background-image: linear-gradient(to left, red, rgb(255, 255, 0), green, blue);
@@ -200,8 +206,13 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 .btn:active {
-  transform: translateY(0.5px);
+  transform: translateY(1px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-random__btn {
+  display: flex;
+  align-items: start;
 }
 
 .img-container {
@@ -218,9 +229,43 @@ body {
 }
 .img-container__picture {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.section--random__loading-spinner {
+.pagination {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.pagination__icon {
+  font-size: 3.5rem;
+  background-image: linear-gradient(to left, rgb(255, 0, 0) 0%, rgb(255, 0, 0) 30%, orange 40%, rgb(255, 255, 0) 50%, rgb(2, 184, 38) 60%, rgb(51, 171, 251) 65%, rgb(109, 0, 187) 75%, violet 85%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  transition: all 0.2s;
+}
+.pagination__icon:hover {
+  transform: scale(1.1);
+}
+.pagination__number {
+  color: rgb(239, 239, 239);
+  font-size: 1.25rem;
+}
+
+.loading-spinner {
+  z-index: 10;
   margin: 5rem auto;
   text-align: center;
   height: 6rem;
@@ -229,12 +274,12 @@ body {
   stroke: black;
   animation: rotate 2s infinite linear, rainbow 6s infinite linear;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.section--random {
+.section-random {
   background-color: #181818;
   padding: 1rem 2.5rem;
   display: flex;
@@ -242,24 +287,24 @@ body {
   gap: 1rem;
   min-height: calc(100vh - (5.4rem + 4.3rem));
 }
-.section--random__container {
+.section-random__container {
   position: relative;
 }
 @media only screen and (min-width: 37.5em) {
-  .section--random__container {
+  .section-random__container {
     grid-column: 1/2;
     grid-row: 2/3;
     min-height: calc(100vh - (5.4rem + 4.3rem));
   }
 }
-.section--random__image {
+.section-random__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.section--finder {
+.section-finder {
   background-color: #181818;
   padding: 1rem 2.5rem;
   min-height: calc(100vh - (5.4rem + 4.3rem));
@@ -268,63 +313,63 @@ body {
   gap: 2rem;
 }
 @media only screen and (min-width: 37.5em) {
-  .section--finder {
+  .section-finder {
     grid-column: 1/-1;
     grid-row: 3/4;
     min-height: calc(100vh - (5.4rem + 4.3rem));
   }
 }
 @media only screen and (min-width: 56.25em) {
-  .section--finder {
+  .section-finder {
     grid-column: 2/3;
     grid-row: 2/3;
   }
 }
-.section--finder__form {
+.section-finder__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 @media only screen and (min-width: 37.5em) {
-  .section--finder__form {
+  .section-finder__form {
     align-items: end;
     flex-direction: row;
   }
 }
 @media only screen and (min-width: 56.25em) {
-  .section--finder__form {
+  .section-finder__form {
     flex-direction: column;
     align-items: stretch;
   }
 }
-.section--finder__input-container {
+.section-finder__input-container {
   display: flex;
   flex-direction: column;
 }
 @media only screen and (min-width: 37.5em) {
-  .section--finder__input-container {
+  .section-finder__input-container {
     width: 50%;
   }
 }
 @media only screen and (min-width: 56.25em) {
-  .section--finder__input-container {
+  .section-finder__input-container {
     width: 100%;
   }
 }
-.section--finder__input {
+.section-finder__input {
   padding: 0.8rem;
 }
-.section--finder__input-label {
+.section-finder__input-label {
   font-size: 1.5rem;
   line-height: 1.6rem;
   text-align: left;
   color: rgb(239, 239, 239);
 }
-.section--finder__container {
+.section-finder__container {
   position: relative;
 }
 
-.section--trending {
+.section-trending {
   background-color: #181818;
   padding: 1rem 2.5rem;
   min-height: calc(100vh - (5.4rem + 4.3rem));
@@ -333,19 +378,19 @@ body {
   gap: 1rem;
 }
 @media only screen and (min-width: 37.5em) {
-  .section--trending {
+  .section-trending {
     grid-column: 2/3;
     grid-row: 2/3;
     min-height: calc(100vh - 5.4rem);
   }
 }
 @media only screen and (min-width: 56.25em) {
-  .section--trending {
+  .section-trending {
     grid-column: 3/4;
     grid-row: 2/3;
   }
 }
-.section--trending__container {
+.section-trending__container {
   position: relative;
 }
 

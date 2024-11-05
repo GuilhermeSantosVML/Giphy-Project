@@ -4,15 +4,15 @@
 
 .nav {
   background-color: none;
-  margin-top: 1rem;
   z-index: 200;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 1.2rem;
+  background-color: rgb(51, 51, 51);
 
-  @include m.respond(lg-phone) {
+  @include m.respond(tab-port) {
     display: none;
   }
   
@@ -22,6 +22,10 @@
     color: v.$color-text-primary;
     transition: color 0.3s ease;
     font-size: 2.3rem;
+
+    &--active {
+      @include m.rainbow-icons();
+    }
     
 
     &:hover {

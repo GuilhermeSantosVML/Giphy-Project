@@ -9,12 +9,15 @@
   background-color: v.$color-bg-primary;
 
   @include m.respond(lg-phone) {
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: repeat(2, auto);
+    display: flex;
+    flex-direction: column;
   }
+
   @include m.respond(tab-port) {
+    display: grid;
     grid-template-columns: 1fr 2.5fr 1fr;
     grid-template-rows: repeat(3, auto);
+    
   }
 }
 
@@ -22,10 +25,4 @@
   padding: 2rem;
 }
 
-.section-random__test {
-    border: solid black;
-    height: 20rem;
-    text-align: center;
-    
-}
 

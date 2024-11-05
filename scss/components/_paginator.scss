@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.pagination {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  &__button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &__icon {
+    font-size: 3.5rem;
+    @include m.rainbow-title();
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__number {
+    color: v.$color-text-primary;
+    font-size: 1.25rem;
+  }
+}

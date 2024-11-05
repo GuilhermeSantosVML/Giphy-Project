@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 
+
 .img-container {
   display: grid;
   // grid-template-columns: repeat(2, 1fr);
@@ -16,5 +17,7 @@
   }
   &__picture {
     display: block;
+    width: 100%;
+    height: auto;
   }
 }

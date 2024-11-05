@@ -1,13 +1,11 @@
 @use "../base/animations";
 
-
 @mixin center {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 @mixin rainbow-title() {
   background-image: linear-gradient(
@@ -21,6 +19,7 @@
     rgb(109, 0, 187) 75%,
     violet 85%
   );
+  background-size: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -43,10 +42,6 @@
   background-clip: text;
   text-fill-color: transparent;
 }
-
-
-
-
 
 @mixin respond($breakpoint) {
   // Small phones (0 - 600px) is default, no media query needed
@@ -72,5 +67,3 @@
     } //1800
   }
 }
-
-
