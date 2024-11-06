@@ -25,4 +25,13 @@
   padding: 2rem;
 }
 
+.error-message {
+  color: red;
+  font-size: v.$font-size-sm;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  @include m.respond(tab-port) {
+   white-space: normal;
+  }
+}
 

@@ -1,14 +1,9 @@
 import { elements } from "../utils/dom.js";
 import { getOffset, scrollToSection } from "../utils/helpers.js";
 
-/**
- * Updates the active state of navigation items
- * @param {NodeList|Array} navItems - Collection of navigation items
- * @param {HTMLElement} activeItem - The item to set as active
- * @todo add tabindex attribute (for focus)
- */
+
 function updateActiveNavItem(navItems, activeItem) {
-  // Remove activ states from all items
+  // Remove active states from all items
   navItems.forEach((item) => {
     item.classList.remove("nav__link--active");
     item.removeAttribute("aria-current");
@@ -19,9 +14,7 @@ function updateActiveNavItem(navItems, activeItem) {
   activeItem.setAttribute("aria-current", "page");
 }
 
-/**
- * Initializes navigation functionality with intersection observer and click handlers
- */
+
 export function initNavigation() {
   // Calculate total offset for scroll positioning
   const totalOffset = getOffset();

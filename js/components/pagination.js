@@ -7,11 +7,7 @@ import { handleTrendingGIFs } from "../handlers/trending.js";
 let currentOffsetFinder = 0,
   currentOffsetTrending = 0;
 
-/**
- * Updates pagination controls for a given section
- * @param {Object} pagination - Pagination data from API response
- * @param {string} section - The section to update ('finder' or 'trending')
- */
+
 export function updatePaginationControls(pagination, section) {
   
   // Calculate total items and pages, constrained by API limit

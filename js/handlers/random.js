@@ -26,7 +26,7 @@ export async function handleLoadRandomGIF() {
     await new Promise((resolve, reject) => {
       const img = elements.pictureElementRandom.querySelector("img");
       if (img.complete) {
-        // If the image is already loaded (complete), resolve immediately
+        // If the image is already loaded, resolve immediately
         resolve();
       } else {
         img.onload = resolve;
@@ -36,7 +36,7 @@ export async function handleLoadRandomGIF() {
   } catch (e) {
     console.error(`Error in random GIF handler: ${e}`);
     elements.pictureElementRandom.innerHTML = `
-      <div class="error-message fa-solid fa-triangle-exclamation" style="color:red" role="alert">
+      <div class="error-message fa-solid fa-triangle-exclamation"  role="alert">
         Error fetching random GIF
       </div>
     `;

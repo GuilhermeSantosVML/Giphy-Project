@@ -4,16 +4,7 @@ import { elements } from "../utils/dom.js";
 import { updatePaginationControls } from "../components/pagination.js";
 import { loadImages } from "../utils/helpers.js";
 
-/**
- * Fetches and displays trending GIFs
- * @param {number} offset - Pagination offset, defaults to 0
- * @returns {Promise<void>}
- *
- * @todo Use min-width and max-width from a constant variable, not hard-coded
- * @todo Add ".error-message" class in css
- *
- * @throws {Error} Propagates errors
- */
+
 export async function handleTrendingGIFs(offset = 0) {
   try {
     // Fetch trending GIFs with pagination parameters
@@ -53,7 +44,7 @@ export async function handleTrendingGIFs(offset = 0) {
   } catch (e) {
     console.error(`Error in trending GIFs handler: ${e}`);
     elements.trendingImageContainer.innerHTML = `
-      <div class="error-message" style="color:red" role="alert">
+      <div class="error-message fa-solid fa-triangle-exclamation" role="alert">
         Error fetching trending GIFs
       </div>
     `;

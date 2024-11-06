@@ -76,7 +76,7 @@ body {
 }
 
 body {
-  font-family: Work Sans, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header-title {
@@ -141,6 +141,18 @@ body {
 
 .section {
   padding: 2rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+@media only screen and (min-width: 56.25em) {
+  .error-message {
+    white-space: normal;
+  }
 }
 
 .nav {
@@ -221,6 +233,7 @@ body {
   grid-auto-rows: auto;
   gap: 1rem;
   justify-content: center;
+  margin: 0 auto;
 }
 .img-container__img {
   width: 100%;

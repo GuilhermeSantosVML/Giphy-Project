@@ -4,18 +4,7 @@ import { elements } from "../utils/dom.js";
 import { updatePaginationControls } from "../components/pagination.js";
 import { loadImages } from "../utils/helpers.js";
 
-/**
- * Handles the search functionality for GIFs
- * @param {Event} e - The event object (optional for pagination)
- * @param {number} offset - Pagination offset, defaults to 0
- * @returns {Promise<void>}
- *
- * @todo Use min-width and max-width from a constant variable, not hard-coded
- * @todo Add ".error-message" class in css
- * @todo Fix loadImage bug
- *
- *  @throws {Error} Propagates errors
- */
+
 export async function handleSearch(e, offset = 0) {
   // Prevent form submission if event exists
   e?.preventDefault();
@@ -66,7 +55,7 @@ export async function handleSearch(e, offset = 0) {
     // Handle and display errors
     console.error("Failed search: ", e);
     elements.finderImageContainer.innerHTML = `
-      <div class="error-message" style="color:red" role="alert">
+      <div class="error-message fa-solid fa-triangle-exclamation" role="alert">
         Error fetching GIFs from API
       </div>`;
     // Rethrow error
