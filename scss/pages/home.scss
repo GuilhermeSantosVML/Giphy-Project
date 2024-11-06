@@ -14,7 +14,7 @@
     @include m.respond(lg-phone) {
       grid-column: 1 / 2;
       grid-row: 2 / 3;
-      min-height: calc(100vh - (#{5.4rem} + #{4.3rem}));
+      min-height: 25rem;
     }
   }
 
@@ -23,6 +23,12 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+
+    @include m.respond(tab-port) {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 
